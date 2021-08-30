@@ -6,59 +6,59 @@ function GenresInDb() {
       <div className="card shadow mb-4">
         <div className="card-header py-3">
           <h5 className="m-0 font-weight-bold text-gray-800">
-            Genres in Data Base
+            Marcas en Base de datos
           </h5>
         </div>
         <div className="card-body">
           <div className="row">
             <div className="col-lg-6 mb-4">
               <div className="card bg-dark text-white shadow">
-                <div className="card-body">Acción</div>
+                <div className="card-body">Olmo</div>
               </div>
             </div>
             <div className="col-lg-6 mb-4">
               <div className="card bg-dark text-white shadow">
-                <div className="card-body">Animación</div>
+                <div className="card-body">Vairo</div>
               </div>
             </div>
             <div className="col-lg-6 mb-4">
               <div className="card bg-dark text-white shadow">
-                <div className="card-body">Aventura</div>
+                <div className="card-body">Venzo</div>
               </div>
             </div>
             <div className="col-lg-6 mb-4">
               <div className="card bg-dark text-white shadow">
-                <div className="card-body">Ciencia Ficción</div>
+                <div className="card-body">Top Mega</div>
               </div>
             </div>
             <div className="col-lg-6 mb-4">
               <div className="card bg-dark text-white shadow">
-                <div className="card-body">Comedia</div>
+                <div className="card-body">Trinx</div>
               </div>
             </div>
             <div className="col-lg-6 mb-4">
               <div className="card bg-dark text-white shadow">
-                <div className="card-body">Documental</div>
+                <div className="card-body">Jbike</div>
               </div>
             </div>
             <div className="col-lg-6 mb-4">
               <div className="card bg-dark text-white shadow">
-                <div className="card-body">Drama</div>
+                <div className="card-body">Randon</div>
               </div>
             </div>
             <div className="col-lg-6 mb-4">
               <div className="card bg-dark text-white shadow">
-                <div className="card-body">Fantasia</div>
+                <div className="card-body">Santa Cruz</div>
               </div>
             </div>
             <div className="col-lg-6 mb-4">
               <div className="card bg-dark text-white shadow">
-                <div className="card-body">Infantiles</div>
+                <div className="card-body">Cube</div>
               </div>
             </div>
             <div className="col-lg-6 mb-4">
               <div className="card bg-dark text-white shadow">
-                <div className="card-body">Musical</div>
+                <div className="card-body">Smart</div>
               </div>
             </div>
           </div>

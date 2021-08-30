@@ -19,6 +19,6 @@ function ChartRow(props){
             )
     }
     
-        
+        //de donde toma los datos esto??
 
 export default ChartRow;

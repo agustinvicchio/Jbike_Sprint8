@@ -17,7 +17,7 @@ let tableRowsData = [
         Awards: 3
     },
     
-]
+] //aca no deberia traer los productos que cargamos?
 
 
 function Chart (){
@@ -29,20 +29,20 @@ function Chart (){
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
                             <tr>
-                                <th>Título</th>
-                                <th>Duración</th>
-                                <th>Rating</th>
-                                <th>Género</th>
-                                <th>Premios</th>
+                                <th>Producto</th>
+                                <th>Color</th>
+                                <th>Rodado</th>
+                                <th>Marca</th>
+                                <th>Stock</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>Título</th>
-                                <th>Duración</th>
-                                <th>Rating</th>
-                                <th>Género</th>
-                                <th>Premios</th>
+                                <th>Producto</th>
+                                <th>Color</th>
+                                <th>Rodado</th>
+                                <th>Marca</th>
+                                <th>Stock</th>
                             </tr>
                         </tfoot>
                         <tbody>
