@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 function ChartRow(props){
     return (
                 <tr>
+                    <td>{props.id}</td>
                     <td>{props.marca}</td>
                     <td>{props.modelo}</td>
                     <td>{props.precio}</td>

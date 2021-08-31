@@ -19,19 +19,24 @@ class Chart extends Component{
         .then(result => result.json())
 
         .then(data => {
-            let info = this.state.tableRows;
-            data.productsResponse.forEach((product) => {
+            let info = [];
+            let products = data.productsResponse
+            console.log(products[0].id);
+            products.map(product => {
                 info.push({
+                    id: product.id,
                     marca: product.brand,
                     modelo: product.model,
-                    precio: product.price,
-                    stock: product.stock
+                    stock: product.stock,
+                    precio: product.price
                 })
-                console.log("info" + info);
+                console.log(info);
             })
-            this.setState({
-                tableRows: info
-            })
+            this.setState({tableRows: info})
+            console.log(this.state.tableRows[0].modelo);
+                
+        
+            
         })
         .catch(e => {
             console.log("Hay errors");
@@ -49,6 +54,7 @@ class Chart extends Component{
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
                             <tr>
+                                <th>Id</th>
                                 <th>Marca</th>
                                 <th>Model</th>
                                 <th>Precio</th>
@@ -56,9 +62,9 @@ class Chart extends Component{
                             </tr>
                         </thead>
                         <tbody>
-                            {this.state.tableRows.length ? this.state.tableRows.map((row,index) => {
-                                    <ChartRow {...row[1]} key = {index} />
-                            }) :
+                            {this.state.tableRows.length ? this.state.tableRows.map((data,index) => 
+                                    <ChartRow {...data} key = {index} />
+                            ) :
                             <tr>
                                 <th>
                             <p>Caragndo..</p>
