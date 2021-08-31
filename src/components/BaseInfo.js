@@ -48,8 +48,10 @@ class BaseInfo extends Component{
         return(
             <React.Fragment>
                 <div className ="row">
-            {this.state.metricas.length ? this.state.metricas.map((dato,index) => 
-                <SmallCard  {...dato} key = {index} />
+            {this.state.metricas.length ? this.state.metricas.map((data,index) => 
+            
+                <SmallCard  {...data} key = {index} />
+            
             ) 
             :
             <p>Cargando Cartas..</p>

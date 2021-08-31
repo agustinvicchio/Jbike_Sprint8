@@ -1,26 +1,46 @@
-import React from 'react';
+import React , { Component } from 'react';
 import ChartRow from './ChartRow';
 
-let tableRowsData = [
-    {
-        Title: 'Billy Elliot ',
-        Length: '123',
-        Rating: '5',
-        Categories: ['Drama','Comedia'],
-        Awards: 2
-    },
-    {
-        Title: 'Alicia en el país de las maravillas',
-        Length: '142',
-        Rating: '4.8',
-        Categories: ['Drama','Acción','Comedia'],
-        Awards: 3
-    },
-    
-] //aca no deberia traer los productos que cargamos?
 
 
-function Chart (){
+
+class Chart extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            tableRows: []
+        }
+    }
+
+
+    componentDidMount()
+    {
+        fetch("http://localhost:3003/products")
+        .then(result => result.json())
+
+        .then(data => {
+            let info = this.state.tableRows;
+            data.productsResponse.forEach((product) => {
+                info.push({
+                    marca: product.brand,
+                    modelo: product.model,
+                    precio: product.price,
+                    stock: product.stock
+                })
+                console.log("info" + info);
+            })
+            this.setState({
+                tableRows: info
+            })
+        })
+        .catch(e => {
+            console.log("Hay errors");
+            console.log(e);
+        })
+    }
+
+    render()
+    {
     return (
         /* <!-- DataTales Example --> */
         <div className="card shadow mb-4">
@@ -29,36 +49,39 @@ function Chart (){
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
                             <tr>
-                                <th>Producto</th>
-                                <th>Color</th>
-                                <th>Rodado</th>
                                 <th>Marca</th>
+                                <th>Model</th>
+                                <th>Precio</th>
                                 <th>Stock</th>
                             </tr>
                         </thead>
-                        <tfoot>
-                            <tr>
-                                <th>Producto</th>
-                                <th>Color</th>
-                                <th>Rodado</th>
-                                <th>Marca</th>
-                                <th>Stock</th>
-                            </tr>
-                        </tfoot>
                         <tbody>
-                            {
-                            tableRowsData.map( ( row , i) => {
-                                return <ChartRow { ...row} key={i}/>
-                            })
-                            }
-
+                            {this.state.tableRows.length ? this.state.tableRows.map((row,index) => {
+                                    <ChartRow {...row[1]} key = {index} />
+                            }) :
+                            <tr>
+                                <th>
+                            <p>Caragndo..</p>
+                                </th>
+                                <th>
+                            <p>Caragndo..</p>
+                                </th>
+                                <th>
+                            <p>Caragndo..</p>
+                                </th>
+                                <th>
+                            <p>Caragndo..</p>
+                                </th>
+                            </tr>}
                         </tbody>
+                  
+
                     </table>
                 </div>
             </div>
         </div>
 
-    )
+    )}
 }
 
 export default Chart;
